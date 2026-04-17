@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SleepNest Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #08111d;
+      --panel: rgba(255,255,255,0.08);
+      --text: #f3f7fb;
+      --muted: #b6c7d8;
+      --accent: #78d3d4;
+      --line: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "PingFang SC", "Noto Sans", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(120,211,212,0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(255,245,215,0.14), transparent 28%),
+        linear-gradient(180deg, #0b1523 0%, #08111d 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+    .hero, .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      backdrop-filter: blur(20px);
+    }
+    .hero { padding: 28px; margin-bottom: 18px; }
+    .panel { padding: 24px 28px; }
+    h1, h2 { margin: 0 0 12px; }
+    p, li { color: var(--muted); line-height: 1.7; }
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
+    }
+    select {
+      appearance: none;
+      background: #0f1c2e;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      min-width: 220px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(120,211,212,0.12);
+      color: var(--accent);
+      font-size: 14px;
+    }
+    section + section { margin-top: 22px; }
+    ul { padding-left: 20px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">SleepNest · Offline Relaxation</div>
+      <h1 id="title">Privacy Policy</h1>
+      <p id="intro">SleepNest works fully offline. We do not require accounts, subscriptions, analytics, or in-app purchases.</p>
+      <div class="row">
+        <label for="locale">Language</label>
+        <select id="locale"></select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <section>
+        <h2 id="collectTitle">Data We Collect</h2>
+        <p id="collectBody">SleepNest does not collect personal information on our servers. Your favorites, custom mixes, recent playback, and imported files stay on your device unless you choose to export and share them.</p>
+      </section>
+      <section>
+        <h2 id="permissionsTitle">Permissions</h2>
+        <p id="permissionsBody">The app only uses local file access when you choose import or export. Audio playback and timers run on device. No account login or network connection is required for core features.</p>
+      </section>
+      <section>
+        <h2 id="sharingTitle">Data Sharing</h2>
+        <p id="sharingBody">We do not sell, rent, or share your personal data with third parties. If you export your mix library, you control where that file is sent.</p>
+      </section>
+      <section>
+        <h2 id="contactTitle">Contact</h2>
+        <p id="contactBody">For privacy questions, contact Lei Liu at jok9580955@gmail.com.</p>
+      </section>
+      <section>
+        <h2 id="effectiveTitle">Effective Date</h2>
+        <p id="effectiveBody">Effective date: 2026-04-17</p>
+      </section>
+    </div>
+  </div>
+  <script>
+    const translations = {
+      "en-US": {
+        name: "English",
+        title: "Privacy Policy",
+        intro: "SleepNest works fully offline. We do not require accounts, subscriptions, analytics, or in-app purchases.",
+        collectTitle: "Data We Collect",
+        collectBody: "SleepNest does not collect personal information on our servers. Your favorites, custom mixes, recent playback, and imported files stay on your device unless you choose to export and share them.",
+        permissionsTitle: "Permissions",
+        permissionsBody: "The app only uses local file access when you choose import or export. Audio playback and timers run on device. No account login or network connection is required for core features.",
+        sharingTitle: "Data Sharing",
+        sharingBody: "We do not sell, rent, or share your personal data with third parties. If you export your mix library, you control where that file is sent.",
+        contactTitle: "Contact",
+        contactBody: "For privacy questions, contact Lei Liu at jok9580955@gmail.com.",
+        effectiveTitle: "Effective Date",
+        effectiveBody: "Effective date: 2026-04-17"
+      },
+      "zh-Hans": {
+        name: "简体中文",
+        title: "隐私政策",
+        intro: "SleepNest 完全离线运行，不需要账号、订阅、统计分析或应用内购买。",
+        collectTitle: "我们收集的数据",
+        collectBody: "SleepNest 不会在服务器收集个人信息。收藏、自定义混音、最近播放和导入文件默认只保存在你的设备中，除非你主动导出并分享。",
+        permissionsTitle: "权限说明",
+        permissionsBody: "只有当你主动导入或导出时，应用才会使用本地文件访问权限。音频播放与定时器都在设备本地运行，核心功能不需要登录或联网。",
+        sharingTitle: "数据共享",
+        sharingBody: "我们不会向第三方出售、出租或共享你的个人数据。如果你导出混音资料库，文件发送位置完全由你决定。",
+        contactTitle: "联系方式",
+        contactBody: "如有隐私问题，请联系 Lei Liu：jok9580955@gmail.com。",
+        effectiveTitle: "生效日期",
+        effectiveBody: "生效日期：2026-04-17"
+      },
+      "zh-Hant": {
+        name: "繁體中文",
+        title: "隱私權政策",
+        intro: "SleepNest 完全離線運作，不需要帳號、訂閱、分析追蹤或 App 內購買。",
+        collectTitle: "我們收集的資料",
+        collectBody: "SleepNest 不會在伺服器端收集個人資料。你的收藏、自訂混音、最近播放與匯入檔案，除非你主動匯出分享，否則都只保留在裝置上。",
+        permissionsTitle: "權限說明",
+        permissionsBody: "只有在你主動匯入或匯出時，App 才會使用本機檔案存取。音訊播放與計時器均在裝置本地執行，核心功能不需要登入或連線。",
+        sharingTitle: "資料分享",
+        sharingBody: "我們不會向第三方出售、出租或分享你的個人資料。若你匯出混音資料庫，檔案傳送位置由你自行決定。",
+        contactTitle: "聯絡方式",
+        contactBody: "若有隱私相關問題，請聯絡 Lei Liu：jok9580955@gmail.com。",
+        effectiveTitle: "生效日期",
+        effectiveBody: "生效日期：2026-04-17"
+      }
+    };
+
+    const select = document.getElementById("locale");
+    const keys = Object.keys(translations);
+    keys.forEach((key) => {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = translations[key].name;
+      select.appendChild(option);
+    });
+
+    function applyLocale(locale) {
+      const entry = translations[locale] || translations["en-US"];
+      Object.entries(entry).forEach(([key, value]) => {
+        if (key === "name") return;
+        const el = document.getElementById(key);
+        if (el) el.textContent = value;
+      });
+      document.documentElement.lang = locale;
+      select.value = locale;
+    }
+
+    const preferred = navigator.language in translations ? navigator.language : "en-US";
+    applyLocale(preferred);
+    select.addEventListener("change", (event) => applyLocale(event.target.value));
+  </script>
+</body>
+</html>
+
