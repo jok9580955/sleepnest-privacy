@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SleepNest Support</title>
+  <style>
+    :root {
+      --bg: #08111d;
+      --panel: rgba(255,255,255,0.08);
+      --text: #f3f7fb;
+      --muted: #b6c7d8;
+      --accent: #78d3d4;
+      --line: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "SF Pro Display", "PingFang SC", "Noto Sans", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(120,211,212,0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(255,245,215,0.14), transparent 28%),
+        linear-gradient(180deg, #0b1523 0%, #08111d 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 72px;
+    }
+    .hero, .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      backdrop-filter: blur(20px);
+    }
+    .hero { padding: 28px; margin-bottom: 18px; }
+    .panel { padding: 24px 28px; }
+    h1, h2 { margin: 0 0 12px; }
+    p, li { color: var(--muted); line-height: 1.7; }
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
+    }
+    select {
+      appearance: none;
+      background: #0f1c2e;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      min-width: 220px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(120,211,212,0.12);
+      color: var(--accent);
+      font-size: 14px;
+    }
+    section + section { margin-top: 22px; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="badge">SleepNest · Support</div>
+      <h1 id="title">Support</h1>
+      <p id="intro">Need help with SleepNest? This page covers setup, import and export, and how to contact support.</p>
+      <div class="row">
+        <label for="locale">Language</label>
+        <select id="locale"></select>
+      </div>
+    </div>
+
+    <div class="panel">
+      <section>
+        <h2 id="helpTitle">Getting Help</h2>
+        <p id="helpBody">If the app does not play audio, confirm your device is not muted and that audio output is available. SleepNest works fully offline, so an internet connection is not required.</p>
+      </section>
+      <section>
+        <h2 id="transferTitle">Import and Export</h2>
+        <p id="transferBody">You can export your favorites and custom mixes as one file, then send it to another device that has SleepNest installed. On the receiving device, open SleepNest and import the file.</p>
+      </section>
+      <section>
+        <h2 id="contactTitle">Contact Support</h2>
+        <p id="contactBody">For support questions, contact Lei Liu at jok9580955@gmail.com.</p>
+      </section>
+      <section>
+        <h2 id="replyTitle">Response Time</h2>
+        <p id="replyBody">We usually reply within 3 business days.</p>
+      </section>
+    </div>
+  </div>
+  <script>
+    const translations = {
+      "en-US": {
+        name: "English",
+        title: "Support",
+        intro: "Need help with SleepNest? This page covers setup, import and export, and how to contact support.",
+        helpTitle: "Getting Help",
+        helpBody: "If the app does not play audio, confirm your device is not muted and that audio output is available. SleepNest works fully offline, so an internet connection is not required.",
+        transferTitle: "Import and Export",
+        transferBody: "You can export your favorites and custom mixes as one file, then send it to another device that has SleepNest installed. On the receiving device, open SleepNest and import the file.",
+        contactTitle: "Contact Support",
+        contactBody: "For support questions, contact Lei Liu at jok9580955@gmail.com.",
+        replyTitle: "Response Time",
+        replyBody: "We usually reply within 3 business days."
+      },
+      "zh-Hans": {
+        name: "简体中文",
+        title: "技术支持",
+        intro: "如果你在使用 SleepNest 时遇到问题，这里提供基础排查、导入导出说明以及联系方式。",
+        helpTitle: "获取帮助",
+        helpBody: "如果应用没有声音，请先确认设备未静音并且当前有可用音频输出。SleepNest 完全离线运行，不需要网络连接。",
+        transferTitle: "导入与导出",
+        transferBody: "你可以将收藏和自定义混音导出为一个文件，再发送到另一台已安装 SleepNest 的设备；在接收设备中打开 SleepNest 并导入该文件即可。",
+        contactTitle: "联系支持",
+        contactBody: "如需技术支持，请联系 Lei Liu：jok9580955@gmail.com。",
+        replyTitle: "回复时间",
+        replyBody: "通常会在 3 个工作日内回复。"
+      },
+      "zh-Hant": {
+        name: "繁體中文",
+        title: "技術支援",
+        intro: "如果你在使用 SleepNest 時遇到問題，這裡提供基本排查、匯入匯出說明與聯絡方式。",
+        helpTitle: "取得協助",
+        helpBody: "如果 App 沒有聲音，請先確認裝置未靜音且目前有可用音訊輸出。SleepNest 完全離線運作，不需要網路連線。",
+        transferTitle: "匯入與匯出",
+        transferBody: "你可以將收藏與自訂混音匯出成單一檔案，再傳送到另一台已安裝 SleepNest 的裝置；在接收裝置開啟 SleepNest 並匯入該檔案即可。",
+        contactTitle: "聯絡支援",
+        contactBody: "如需技術支援，請聯絡 Lei Liu：jok9580955@gmail.com。",
+        replyTitle: "回覆時間",
+        replyBody: "通常會在 3 個工作日內回覆。"
+      }
+    };
+
+    const select = document.getElementById("locale");
+    Object.keys(translations).forEach((key) => {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = translations[key].name;
+      select.appendChild(option);
+    });
+
+    function updateQuery(locale) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", locale);
+      window.history.replaceState({}, "", url);
+    }
+
+    function applyLocale(locale, { syncUrl = true } = {}) {
+      const entry = translations[locale] || translations["en-US"];
+      Object.entries(entry).forEach(([key, value]) => {
+        if (key === "name") return;
+        const el = document.getElementById(key);
+        if (el) el.textContent = value;
+      });
+      document.documentElement.lang = locale;
+      select.value = locale;
+      if (syncUrl) updateQuery(locale);
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get("lang");
+    const preferred = requested && requested in translations
+      ? requested
+      : navigator.language in translations
+        ? navigator.language
+        : "en-US";
+    applyLocale(preferred, { syncUrl: false });
+    select.addEventListener("change", (event) => applyLocale(event.target.value));
+  </script>
+</body>
+</html>

@@ -162,7 +162,13 @@
       select.appendChild(option);
     });
 
-    function applyLocale(locale) {
+    function updateQuery(locale) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", locale);
+      window.history.replaceState({}, "", url);
+    }
+
+    function applyLocale(locale, { syncUrl = true } = {}) {
       const entry = translations[locale] || translations["en-US"];
       Object.entries(entry).forEach(([key, value]) => {
         if (key === "name") return;
@@ -171,12 +177,18 @@
       });
       document.documentElement.lang = locale;
       select.value = locale;
+      if (syncUrl) updateQuery(locale);
     }
 
-    const preferred = navigator.language in translations ? navigator.language : "en-US";
-    applyLocale(preferred);
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get("lang");
+    const preferred = requested && requested in translations
+      ? requested
+      : navigator.language in translations
+        ? navigator.language
+        : "en-US";
+    applyLocale(preferred, { syncUrl: false });
     select.addEventListener("change", (event) => applyLocale(event.target.value));
   </script>
 </body>
 </html>
-
